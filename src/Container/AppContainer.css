@@ -17,6 +17,7 @@
 }
 
 .app-heading {
+    margin-top: 8px;
     font-size: 18px;
     font-weight: bold;
     display: flex;

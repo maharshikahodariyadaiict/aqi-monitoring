@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-//import * as d3 from 'd3';
 import './Chart.css';
 import { AQIData } from '../../Shared/Types/Types';
 
@@ -74,7 +73,7 @@ const Chart: React.FC<Props> = props => {
                 .y(function (d: any) { return y(d.aqi) })
             )
 
-        // Add the line
+        // Add the cirles on data point
         svg.selectAll("myCircles")
             .data(dataset)
             .enter()

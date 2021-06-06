@@ -1,5 +1,5 @@
 import Card from './Card/Card';
-import Chart from './Chart/ChartN';
+import Chart from './Chart/Chart';
 import Legends from './Legends/Legends';
 import ToastMessage from './ToastMessage/ToastMessage';
 
