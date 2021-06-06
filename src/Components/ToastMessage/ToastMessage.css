@@ -1,0 +1,35 @@
+.toast-message-wrapper {
+    position: fixed;
+    display: block;
+    width: 90%;
+    top: 100%;
+    z-index: 10;
+}
+
+.toast-message-div {
+    border-radius: 4px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 50px;
+    background-color: turquoise;
+}
+
+.toast-message {
+    color: black;
+    text-align: center;
+    margin: 5px 10px;
+    font-size: 14px;
+}
+
+.toast-appear {
+    top: 90%;
+    transition: all 0.5s;
+}
+
+.toast-disappear {
+    top: 100%;
+    transition: all 0.5s;
+}
