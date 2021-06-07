@@ -1,46 +1,62 @@
-# Getting Started with Create React App
+# Project Description
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+AQI monitoring is Single Page Web displays live AQI (Air Quality Index) of different cities in India.
 
-In the project directory, you can run:
+## Features
 
-### `yarn start`
+### Legends
 
-Runs the app in the development mode.\
+On the  top of page, Air Quality Index Map provides color pallete which maps aqi to corresponding color code. 
+
+This color codes are being used as backround color of accordion card.
+
+### Accordion Card
+
+Accordion card shows city wise AQI data.
+
+Each card displays `city name`, `aqi` and `last updated` field. It also contains chevron icon on left to open that card.
+
+When card is opened it shows line graph of that particular `city aqi` vs `time`.
+
+We can open multiple cards in order to compare graphs of multiple cities. This graph also updates and scales with live data.
+
+### Toast Message
+
+Toast message comes on the center bottom part when there is any updates coming from Web Socket connection. 
+
+### Web Socket Handling
+
+Custom react hook created to handle Web socket connection. Different scenarios handled in `useWebSocket` hook. 
+
+### Last updated polling **Performance***
+
+On accordion card last updated data showed. Polling logic is mentioned below which efficiently polls all cards to update timestamp on it. 
+
+Every `5 seconds` if data is **not older than a min**.
+Every `1 min` if data is **not older than an hour**.
+Every `1 hour` if data is **not older than a day**.
+Every `1 day` if data is **older than a day**.
+
+## Steps to run on local machine
+
+### `git pull`
+
+Checkout latest code from master branch to local machine.
+
+### `yarn / npm install`
+
+Go to that project directory in cli.
+
+Install required package by running **yarn / npm install** command. 
+
+### `yarn start / npm run start`
+
+Once all packages are installed. Run the app in the development mode by running **yarn start / npm run start** command.
+
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Other Library used
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+`d3-js` - To draw line chart.
