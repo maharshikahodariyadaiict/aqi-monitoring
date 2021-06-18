@@ -8,7 +8,7 @@ interface Constant {
 }
 
 const Constants: Constant = {
-    aqiWebSocketUrl: 'ws://city-ws.herokuapp.com',
+    aqiWebSocketUrl: 'wss://city-ws.herokuapp.com',
     maxAQI: 500,
     minAQI: 0,
     secInDay: 86400,
